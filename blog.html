@@ -45,20 +45,9 @@
             <header class="mb-4">
                 <h2>What is Event loop in JavaScript?</h2>
             </header>
-            <p class="fs-5">
-                <strong>Var: </strong>It can be declared without initialization.In JavaScript, var is a reserved keyword
-                which is followed by a reference variable name. The name defined after the
-                keyword can then be used as a pointer to the data in-memory. <br>
-                <strong>let: </strong>It can be declared without initialization. The let declaration was introduced with ES6
-                and has since become the preferred method for variable declaration. It is
-                regarded as an improvement over var declarations and is block-scoped (variables that can be accessed only in
-                the
-                immediate block), circumventing the main issue that can arise with using var. <br>
-                <strong>const: </strong>It cannot be declared without initialization.The const declaration was introduced
-                with ES6, alongside let, and it is very similar to let. const points to data in
-                memory that holds constant values, as the name implies. const reference variables cannot be reassigned to a
-                different
-                object in memory
+            <p class="fs-5">The Event Loop monitor the Call Stack and the Callback Queue. If the Call Stack is empty, the Event Loop will take the
+            first event from the queue and will push it to the Call Stack, which effectively runs it. Such an iteration is called a
+            tick in the Event Loop
             </p>
         </section>
     
