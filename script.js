@@ -47,6 +47,7 @@ const typeController = (e) => {
       newLetter === " " ? "▪" : newLetter
     }</span>`;
   } else {
+    errorCount++;
     display.innerHTML += `<span class="red">${
       newLetter === " " ? "▪" : newLetter
     }</span>`;
@@ -93,7 +94,7 @@ const gameOver = () => {
 
   // restart everything
   startTime = null;
-  errorCount = 0;
+  // errorCount = 0;
   userText = "";
   display.classList.add("inactive");
 };
@@ -105,7 +106,7 @@ const closeModal = () => {
 
 const start = () => {
   // If already started, do not start again
-  if (errorCount) return;
+  if (startTime) return;
 
   let count = 3;
   countdownOverlay.style.display = "flex";
@@ -136,7 +137,7 @@ displayHistory();
 // Show typing time spent
 setInterval(() => {
   const currentTime = new Date().getTime();
-  const timeSpent = (currentTime - startTime) / 1000;
+  const timeSpent = Math.round((currentTime - startTime) / 1000);
 
   document.getElementById("show-time").innerHTML = `${
     startTime ? timeSpent : 0
